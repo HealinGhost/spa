@@ -1,0 +1,516 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background-image: url('../public/img/background.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow:visible;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin:0;
+    height: 100vh;
+}
+
+#screen {
+    flex: 1;
+    position: relative;
+    height: 95%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body #toolbar {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    background-color: rgb(33, 101, 196);
+    box-shadow: inset 0 3px 6px rgba(239, 238, 238, 0.16), 0 4px 6px rgba(0,0,0,0.45);
+}
+
+body #toolbar #toolbar-menu {
+    display: flex;
+    flex-direction: row;
+    width: 175px;
+    height: 100%;
+    background-color: rgb(52, 166, 52);
+    box-shadow: inset 0 3px 6px rgba(238, 239, 238, 0.16), 0 4px 10px rgba(13, 62, 13, 0.757);
+    border-radius: 0 10px 10px 0;
+}
+
+body #toolbar #toolbar-menu:hover {
+    background-color: rgb(38, 117, 38);
+}
+
+.program {
+    width: 40px;
+    height: 35px;
+    margin: 5px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    border-width: 3px;
+    transition: margin 0.5s ease, height 0.5s ease, width 0.5s ease;
+    background-color: white;
+}
+
+.program:hover {
+    width: 45px;
+    height: 40px;
+}
+
+.program:active {
+    background-color: rgba(255, 255, 255, 0.756);
+}
+
+#chat-icon {
+    background-image: url(../public/img/chat.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#memory-icon {
+    background-image: url(../public/img/brain.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#magic-8ball-icon {
+    background-image: url(../public/img/8ball.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#windows-icon {
+    background-image: url(../public/img/windows.png);
+    margin-left: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    aspect-ratio: 1 / 1;
+    height: 100%;
+}
+
+#toolbar-menu-label {
+    user-select: none;
+    margin-left: 10px;
+    text-align: center;
+    color: white;
+    font-family:Tahoma, Arial, sans-serif;;
+    font-size:40px;
+}
+
+.application {
+    position: absolute;
+    border-width: 4px;
+    border-style: solid;
+    height: 300px;
+    width: 250px;
+}
+
+.application-toolbar {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 100%;
+    height: calc(15% - 2px);
+    background-color: gainsboro;
+    border-bottom-style: solid;
+    border-width: 2px;
+}
+
+.application-toolbar-button {
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    background-color: rgb(198, 6, 6);
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: auto;
+    font-weight: bold;
+    padding: 2px;
+    margin-inline: 5px;
+}
+
+.application-toolbar-button:hover {
+    background-color: rgb(142, 4, 4);
+}
+
+.application-toolbar-button:active {
+    background-color: rgba(142, 4, 4, 0.494);
+}
+
+.application-toolbar-title {
+    margin-right: auto;
+    padding: 2px;
+}
+
+.chat-application-screen {
+    background-color:blueviolet;
+    height: calc(100% - 15% + 1px);
+}
+
+.chat-application-inform-label {
+    font-size: 20px;
+    text-align: center;
+    margin: auto;
+}
+
+.chat-application-screen-message {
+    font-size: 16px;
+    width: 60%;
+    height: 60%;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+    background-color:rgb(206, 156, 253);
+}
+
+.chat-application-screen-submit {
+    width: 30%;
+    margin-left: 5px;
+    border-radius: 5px;
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
+    color: black;
+    background-color:#3a872f;
+    font-size: 16px;
+}
+
+.chat-application-screen-submit:hover {
+    background-color:#68659b;
+}
+
+.chat-application-screen-submit:active {
+    background-color:#68659bde;
+}
+
+.chat-application-screen-input-box {
+    height: 15%;
+    padding: 5px;
+    background-color:rgb(97, 30, 161);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-application-screen-output-box {
+    display: flex;
+    flex-direction:column-reverse;
+    height: calc(85% - 10px);
+    background-color: rgb(177, 218, 218);
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width:none;
+    scrollbar-color: transparent transparent;
+}
+
+.chat-application-screen-input-box::-webkit-scrollbar {
+    width: 0;
+}
+
+.chat-application-screen-messageBox {
+    white-space: normal;
+    margin-bottom: 4px;
+    margin-inline: 2px;
+    background-color: chocolate;
+    padding-inline: 5%;
+    border-style: groove;
+    border-radius: 10px;
+    border-color: rgb(56, 28, 9);
+}
+
+.chat-application-screen-messageBox:hover {
+    background-color: rgb(233, 118, 36);
+}
+
+.chat-application-screen-messageBox:active {
+    background-color: rgba(233, 118, 36, 0.836);
+}
+
+.chat-label {
+    word-wrap: break-word;
+}
+
+.memory-start-screen {
+    background-color: #F0ECE5;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.memory-game-screen {
+    height: 100%;
+    overflow: hidden;
+}
+
+.memory-start-button {
+    border-style: solid;
+    border-color: black;
+    border-radius: 20px;
+    width: 70%;
+    margin-inline: auto;
+    margin-block: 10px;
+    background-color: #31304D;
+    color: #F0ECE5;
+    font-size: 14px;
+}
+
+.memory-start-button:hover {
+    background-color: #575584;
+}
+
+.memory-start-button:active {
+    background-color: #575584c1;
+}
+
+.memory-start-button:focus {
+    background-color: #575584;
+    outline:none
+}
+
+.memory-start-label {
+    margin-inline: auto;
+    font-size: 20px;
+}
+
+.memory-game-tile {
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    box-sizing: border-box;
+    width: 90%;
+    max-height: 90%;
+    max-width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    aspect-ratio: 1 / 1;
+}
+
+.memory-game-tile:focus {
+    outline: 2px solid red;
+}
+
+.memory-game-tile-image{
+    border-radius: 5px;
+    width: 80%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    aspect-ratio: 1 / 1;
+}
+
+.memory-game-tile-show {
+    background-color: #ABC4AA;
+}
+
+.memory-game-tile-hidden {
+    background-color: #675D50;
+}
+
+.memory-game-tile-hidden:hover {
+    background-color: #7d7161;  
+}
+
+.memory-game-grid-container-4columns {
+    margin: auto;
+    display: grid;
+    width: 85%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.memory-game-grid-container-2columns {
+    margin: auto;
+    display: grid;
+    width: 85%;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.memory-game-tileScreen {
+    background-color: #F3DEBA;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 50px);
+}
+
+.memory-game-controller {
+    display: flex;
+    flex-direction: row;
+    height: calc(50px);
+    width: 100%;
+    background-color: #A9907E;
+}
+
+.memory-game-controller-button-box {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+}
+
+.memory-game-controller-button {
+    border-radius: 2px;
+    border-width: 3px;
+    border-color: black;
+    border-style: solid;
+    background-color: #F3DEBA;
+    margin-block: auto;
+    margin-left: 5px;
+    height: 80%;
+    aspect-ratio: 1 / 1;
+}
+
+.memory-game-controller-button:hover {
+    background-color: #d6c5a7;
+}
+
+.memory-game-controller-button:active {
+    background-color: #d6c5a7cd;
+}
+
+.memory-game-controller-button-restart {
+    background-image: url('../public/img/restart.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.memory-game-controller-button-goBack {
+    background-image: url('../public/img/exit.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.memory-game-status-box {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block: auto;
+    padding-right: 10px;
+    width: 60%;
+}
+
+.memory-game-end-div {
+    text-align: center;
+    margin: auto;
+}
+
+.memory-game-end-label {
+    font-size: 26px;
+}
+
+.eightball-application-screen {
+    background-color:whitesmoke;
+    height: calc(100% - 15% + 1px);
+}
+
+.eightball-display-box {
+    display: flex;
+    height: calc(85% - 12px);
+    background-color:whitesmoke;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width:none;
+    scrollbar-color: transparent transparent;
+}
+
+.eightball-input-box {
+    border-top-width: 3px;
+    border-top-color: black;
+    border-top-style: solid;
+    height: 15%;
+    padding: 5px;
+    background-color:rgb(66, 65, 67);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eightball-input-submit {
+    width: 30%;
+    margin-left: 5px;
+    border-radius: 5px;
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
+    color: black;
+    background-color:rgb(244, 232, 166);
+    font-size: 16px;
+}
+
+.eightball-input-submit:hover {
+    background-color:rgb(221, 211, 153);
+}
+
+.eightball-input-submit:active {
+    background-color:rgba(244, 232, 166, 0.794);
+}
+
+.eightball-input-text {
+    font-size: 16px;
+    width: 60%;
+    height: 60%;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+    background-color:rgb(229, 226, 230);
+}
+
+.eightball-display-OutsideBall {
+    border-radius: 50%;
+    height: (100% - 10px);
+    aspect-ratio: 1 / 1;
+    background-color: black;
+    margin-block: 5px;
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+.eightball-display-InsideBall {
+    border-radius: 50%;
+    max-height: 50%;
+    max-width: 50%;
+    aspect-ratio: 1 / 1;
+    margin-inline: auto;
+    margin-block: 25%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.eightball-output-label {
+    transition: opacity 1s ease-in-out;
+    color: black;
+    padding: 2px;
+    text-align: center;
+    max-width: 90%;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+.fade-out {
+    opacity: 0;
+}
