@@ -11,3 +11,7 @@ The following desktop currently provides 3 functional applications
 To run this application simply download the project from the branch and run the following commands
 * <b>"npm install"</b>
 * <b>"npm run serve"</b>
+
+
+Video:
+[VIDEO URL](https://drive.google.com/file/d/1CWfCn2EFrUS6HlO_fKrkjCFneV81EirZ/view?usp=sharing)
